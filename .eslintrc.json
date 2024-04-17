@@ -16,6 +16,7 @@
     "no-unused-vars": "off",
     "no-console":"off",
     "no-use-before-define": "off",
-    "no-param-reassign": "off"
+    "no-param-reassign": "off",
+    "no-undef":"off"
   }
 }
