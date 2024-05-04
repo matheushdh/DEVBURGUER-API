@@ -4,7 +4,7 @@ import SessionControler from './controllers/SessionControler';
 
 const routes = new Router();
 
-routes.post('/users', UserController.store);
+routes.post('/user', UserController.store);
 routes.post('/session', SessionControler.store);
 
 export default routes;
