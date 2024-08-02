@@ -15,6 +15,11 @@ class ProductController {
       return response.status(400).json({ error: err.errors });
     }
 
+    // Verificar se o arquivo foi enviado
+    if (!request.file) {
+      return response.status(400).json({ error: 'Nenhum arquivo enviado.' });
+    }
+
     const { filename: path } = request.file;
     const { name, price, category } = request.body;
 
@@ -26,6 +31,12 @@ class ProductController {
     });
 
     return response.status(201).json(product);
+  }
+
+  async index(request, response) {
+    const products = await Product.findAll();
+
+    return response.json(products);
   }
 }
 
